@@ -1,0 +1,156 @@
+.ColorBox {
+  font-size: 1rem;
+  width: 20%;
+  height: 25%;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.SingleColorPalette .ColorBox {
+  height: 50%;
+}
+.ColorBox.back-button-container {
+  background-color: rgb(77, 77, 77);
+}
+.ColorBox:not(focus-visible) {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.copy-button,
+.back-button {
+  width: 50%;
+  height: 2rem;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  line-height: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+.copy-button {
+  opacity: 0;
+}
+
+.ColorBox:hover .copy-button {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.box-content,
+.see-more {
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-align: left;
+  padding: 0.5rem;
+  /* color: #000; */
+  letter-spacing: 1px;
+}
+.box-content {
+  left: 0;
+}
+.light-text {
+  color: #fff;
+}
+.see-more {
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.dark-text {
+  color: rgba(0, 0, 0, 0.7);
+}
+.copy-overlay {
+  opacity: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: scale(0.1);
+  transition: transform 0.5s ease-in-out;
+}
+.copy-overlay.show {
+  opacity: 1;
+  transform: scale(50);
+  z-index: 10;
+  position: absolute;
+}
+
+.copy-overlay,
+.copy-overlay:active,
+.copy-overlay:not(focus-visible),
+.copy-overlay:focus,
+.copy-overlay.show,
+.copy-overlay.show:active,
+.copy-overlay.show:not(focus-visible),
+.copy-overlay.show:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.copy-msg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transform: scale(0.01);
+  opacity: 0;
+  color: #fff;
+}
+.copy-msg.show {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 25;
+  transition: transform 0.4s ease-in-out, opacity 0.1s ease-in-out;
+  transition-delay: 0.3s;
+  text-transform: uppercase;
+}
+.copy-msg h1 {
+  font-weight: 400;
+  text-shadow: 1px 2px #000;
+  display: contents;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5rem;
+}
+.copy-msg p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+@media (max-width: 800px) {
+  .ColorBox {
+    width: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+  .ColorBox {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .ColorBox {
+    width: 100%;
+  }
+}
